@@ -8,7 +8,6 @@ class Contact(models.Model):
     subject = models.CharField(max_length=100)
     message = models.TextField(blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
     is_published = models.BooleanField(default=False)  # Admin tomonidan ko'rinadigan yoki yo'qligi
     user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)  # Foydalanuvchi
 
