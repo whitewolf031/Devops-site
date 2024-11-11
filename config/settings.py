@@ -22,7 +22,6 @@ INSTALLED_APPS = [
     'ownsite',
     "rest_framework",
     'rest_framework.authtoken',
-    'rest_framework_simplejwt',
     'djoser',
     'corsheaders'
 ]
@@ -82,11 +81,8 @@ REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
     'PAGE_SIZE': 100,
     'DEFAULT_AUTHENTICATION_CLASSES': (
-        'rest_framework_simplejwt.authentication.JWTAuthentication', #JWT orqali Authentication
-        'rest_framework.authentication.BasicAuthentication', #Basic orqali Authentication
-        'rest_framework.authentication.SessionAuthentication', #Session orq  ali Authentication
-
-    ),
+    'rest_framework.authentication.SessionAuthentication',  # faqat Session orqali Authentication
+),
 }
 
 AUTH_PASSWORD_VALIDATORS = [
